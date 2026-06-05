@@ -8,111 +8,155 @@
       * {
         margin: 0;
         padding: 0;
-        font-family: sans-serif; 
-        background-color: aliceblue;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 40px 20px;
       }
 
       .main {
-        margin: 0;
-        padding: 0;
-        border: 2px solid red;
-        width: 100%;
-        height: 100%;
+        background-color: white;
+        border-radius: 20px;
+        padding: 40px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        background-color: aliceblue;
       }
 
       .heading {
         text-align: center;
-        margin: 5% 0 5% 0;
+        margin-bottom: 40px;
+      }
+
+      .heading p {
+        color: #667eea;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+
+      h1 {
+        font-size: 35px;
+        color: #333;
+        font-weight: 700;
       }
 
       .subscription-card {
         display: flex;
-        justify-content: space-around;
-        gap: 10px;
+        justify-content: center;
+        gap: 30px;
       }
 
       .card {
-        border: 2px solid white;
-        border-radius: 5px;
-        height: 70%;
-        width: 25%;
-        margin: 0 0 10px 0;
+        background-color: #f8f9ff;
+        border-radius: 12px;
+        padding: 30px;
+        width: 280px;
         display: flex;
         flex-direction: column;
-        
-        gap: 20px;
-
-
-        background-color: white;
+        position: relative;
       }
+
+      
 
       .subscription-type {
         text-align: center;
-        border: 2px solid red;
-        border-radius: 5px;
-        margin: 10px ;
-        height: 200px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        background-color:rgb(213, 213, 255);
+      }
+
+      .subscription-type h3 {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 12px;
+        margin-top: 8px;
+      }
+
+      .subscription-type p {
+        font-size: 13px;
+        color: #777;
+        line-height: 1.5;
+        margin-bottom: 15px;
+      }
+
+      .subscription-type h4 {
+        font-size: 22px;
+        color: #333;
+        font-weight: 700;
+        margin-bottom: 5px;
       }
 
       .subscription-type button {
-        
-        background-color: blue;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white;
-        border: 2px solid blue;
-        border-radius: 10px;
-        height: 26px;
-        margin: 0 5px 0 5px;
-        
+        border: none;
+        border-radius: 25px;
+        padding: 12px 30px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        width: 100%;
       }
 
       h4 {
-        font-size:25px;
-      }
-
-      subscription-type h3 {
-        font-sizd: 27px;
+        font-size: 14px;
+        color: #333;
+        margin-bottom: 15px;
+        font-weight: 600;
       }
 
       .offerings {
-        margin: 0 0 10px 20px;
-        gap: 10px;
+        padding: 0;
       }
+
+      .offerings ul {
+        list-style: none;
+      }
+
+      .offerings li {
+        font-size: 13px;
+        color: #666;
+        padding: 8px 0;
+        display: flex;
+        align-items: center;
+      }
+
+      
     </style>
   </head>
 
   <body>
     <div class="main">
-      <div class="heading">
+      <div class="heading" style="background:none;">
         <p>Pricing Plans</p>
-        <h2>Choose the perfect plane for your needs</h2>
+        <h1>Choose the perfect plane for your needs</h1>
       </div>
+
       <div class="subscription-card">
         <!-- card 1 -->
         <div class="card">
           <div class="subscription-type">
             <h3>Lite</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente,
-              odit!
+              Ideal for individuals and small teams. Enjoy a curated selection of templates and basic customization options to get your projects started
             </p>
-            <h4>Price</h4>
-            <p>Annual price</p>
+            <h4>$6.99/month</h4>
+            <p>$83.08 billed annually</p>
             <button type="submit">Choose plan</button>
           </div>
-          <h4>for small project</h4>
+          <h4>For small projects</h4>
           <div class="offerings">
             <ul>
-              <li>800+ design template</li>
+              <li>800+ design templates</li>
               <li>Essential customization options</li>
               <li>Regular updates</li>
-              <li>ideal for individuals and small team</li>
+              <li>Ideal for individuals and small teams</li>
             </ul>
           </div>
         </div>
@@ -120,22 +164,23 @@
         <!-- card 2-->
         <div class="card">
           <div class="subscription-type">
-            <h3>Lite</h3>
+            <h3>Pro</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente,
-              odit!
+              Perfect for growing teams, providing advanced design capabilities, an extensive library of premium templates, and integration with popular design tools
             </p>
-            <h4>Price</h4>
-            <p>Annual price</p>
+            <h4>$19.99/month</h4>
+            <p>$239.88 billed annually</p>
             <button type="submit">Choose plan</button>
           </div>
-          <h4>for small project</h4>
+          <h4>For developing teams</h4>
           <div class="offerings">
             <ul>
-              <li>800+ design template</li>
-              <li>Essential customization options</li>
-              <li>Regular updates</li>
-              <li>ideal for individuals and small team</li>
+              <li>All Lite benefits</li>
+              <li>10,000+ premium template library</li>
+              <li>Personalized customization</li>
+              <li>Integration with 10+ design tool including Figma, Sketch, and Adobe XD</li>
+              <li>Enhanced regular updates</li>
+              <li>Perfect for growing teams</li>
             </ul>
           </div>
         </div>
@@ -143,22 +188,23 @@
         <!-- card 3 -->
         <div class="card">
           <div class="subscription-type">
-            <h3>Lite</h3>
+            <h3>Unlimited</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente,
-              odit!
+              Provides complete features for enterprises, including unlimited access to all templates, advanced customization, and seamless integration with various design tools
             </p>
-            <h4>Price</h4>
-            <p>Annual price</p>
+            <h4>$49.99/month</h4>
+            <p>$599.88 billed annually</p>
             <button type="submit">Choose plan</button>
           </div>
-          <h4>for small project</h4>
+          <h4>For enterprises</h4>
           <div class="offerings">
             <ul>
-              <li>800+ design template</li>
-              <li>Essential customization options</li>
-              <li>Regular updates</li>
-              <li>ideal for individuals and small team</li>
+              <li>All Pro benefits</li>
+              <li>Unlimited template library</li>
+              <li>Advanced customization</li>
+              <li>Integration with 25+ design tool including Figma, Sketch, and Adobe XD</li>
+              <li>Real-time updates</li>
+              <li>Best for large teams and enterprises</li>
             </ul>
           </div>
         </div>
