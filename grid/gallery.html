@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        height: 100%;
+        width: 100%;
+        font-family: sans-serif;
+        background-color: black;
+        color:white;
+    }
+
+    .container {
+      display: grid;
+      grid-template:100px 100px/ 100px 150px 100px;
+      grid-template-columns: repeat(3,1fr);
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      grid-template-rowS: 4fr;
+      grid-gap: 16px;
+    }
+
+    .box {
+      border: 2px solid white;
+      border-radius: 2px;
+      text-align: center;
+      align-content: center;
+      font-size: 60px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="box"><img src="https://imgs.search.brave.com/PHNGSTIiC7My25zqKV6yhStfOJFgRmSFGmsetZKE2qI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXQuY29t/L3cvZnVsbC9jLzYv/ZC8zMjQ4NTAtMjE2/MHgzODQwLXNhbXN1/bmctNGstdGhvci13/YWxscGFwZXItaW1h/Z2UuanBn" alt="" srcset=""></div>
+      <div class="box"><img src="https://imgs.search.brave.com/cn2nB7Eyk4QxuQrLftx-6cNnpi1HwEl7v-ufGsqFglw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXZlLmNv/bS93cC93cDYzODg1/ODAuanBn" alt="" srcset=""></div>
+      <div class="box"><img src="https://imgs.search.brave.com/zSqpgI1o7eNCyjmjoFqKo8zYUHI_IpAVj20Ymnz2bGQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXQuY29t/L3cvZnVsbC8zL2Ev/Yi8xODUyNTQtMTc5/MngyNTYwLXBob25l/LWhkLWxva2ktd2Fs/bHBhcGVyLWltYWdl/LmpwZw" alt="" srcset=""></div>
+      <div class="box"><img src="https://imgs.search.brave.com/ger0ARw41Pt-bKHttabnSRM2FL_jmlYnvT5WHP4jks8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXZlLmNv/bS93cC93cDEyNjIx/NTUwLmpwZw" alt="" srcset=""></div>
+      <div class="box"><img src="https://imgs.search.brave.com/nCA1dmTC4GaajnOwfIs6BZzwTV9N3dlm3kTWD_tUYKo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXQuY29t/L3cvZnVsbC8yLzQv/Ni8zMjAwNDAtMTE1/MngyMDQ4LWlwaG9u/ZS1oZC1pcm9uLW1h/bi1iYWNrZ3JvdW5k/LmpwZw" alt=""></div>
+    </div>
+  </body>
+</html>
