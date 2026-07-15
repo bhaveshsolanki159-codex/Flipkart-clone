@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Page</h1>
+    <button type="button">Select</button>
+    <script>
+        alert("Now it's running");
+        let name = prompt("Enter your name");
+        console.log(name);
+
+        console.log("Hello from browser");
+        console.log("sum",4+5);
+
+        btn = document.querySelector("button");
+
+        btn.addEventListener("click", () => {
+            console.log("clicked")
+        });
+    </script>
+</body>
+</html>
