@@ -529,3 +529,133 @@ const s1 = new employee('naresh', 200000, 'Commerce')
 s1.info()
 
 
+function rectangle(width, height){
+    this.width = width;
+    this.height = height;
+
+    this.getArea = function() {
+        console.log('area: ', width*height);
+    }
+}
+
+const rec = new rectangle(2,3);
+rec.getArea()
+
+const rectangle = {
+    width: 5,
+    height: 3,
+
+    getArea: function(width,height) {
+        console.log("area:",width*height)
+    }
+}
+
+rectangle.getArea()
+
+// Key Values 
+
+const user = {
+    name: 'Rahul',
+    age: 12,
+    class: 6
+}
+
+for (let [Key,values] of Object.entries(user)) {
+    console.log(`${key} -> ${values}`)
+}
+
+// Object => JSON String
+
+const user = {
+    name: "Rahul",
+    location: "Ahmedabad",
+    age: undefined,
+    greet: function() {
+        console.log("Hi there");
+    }
+}
+
+console.log(typeof user);
+console.log("User: ", user);
+
+let res = JSON.stringify(user);
+let res2 = JSON.parse(res);
+
+console.log(res);
+console.log(res2);
+console.log(typeof res2);
+
+// constructor 
+class Student {
+    constructor (name, id) {
+        this.name = name;
+        this.id = id;
+    }
+
+    introduce() {
+        console.log("Hi, I am "+this.name+ " with id"+ this.id);
+    }
+
+    greet() {
+        console.log("Hi, "+this.name);
+    }
+
+     getAvg(){ 
+        return this.marks.reduce((sum, val) => sum + val, 0) / this.marks.length;
+    }
+}
+
+let s1 = new Student("Alpesh",64);
+s1.introduce();
+
+// employee class
+
+class Employee {
+    constructor (name) {
+        this.name = name;
+    }
+
+    greet() {
+        console.log("Hi, I'm "+ this.name);
+    }
+}
+
+let s2 = new Employee("Rohan");
+s2.greet();
+
+// 
+class Rectangle {
+  constructor(width, height) {
+    this.width = width;
+    this.height = height;
+  }
+  getArea() {
+    return this.width * this.height;
+  }
+}
+class Square extends Rectangle {
+  constructor(length) {
+    super(length, length);
+  }
+}
+const mySquare = new Square(4);
+console.log(`The area of the square is: ${mySquare.getArea()}`);
+
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+
+    speak() {
+        console.log(`${this.name}, bhau... bhau...`);
+    }
+}
+
+class Dog extends Animal {
+    constructor (name) {
+        super(name);
+    }
+}
+
+const d = new Dog("Alpesh");
+d.speak();
