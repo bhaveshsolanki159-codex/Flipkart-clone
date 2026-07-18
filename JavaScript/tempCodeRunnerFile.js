@@ -1,12 +1,15 @@
-function employee(name, salary, department) {
-    this.name = name;
-    this.salary = salary;
-    this.department = department;
-
-    this.info = function() {
-        console.log(`${name} monthly salary is ${salary} and it come from ${department} department`)
+class Employee {
+    constructor (name,salary) {
+        this.name = name;
+        this.salary = salary;
     }
 }
 
-const s1 = new employee('naresh', 200000, 'Commerce')
-s1.info()
+class Manager extends Employee {
+    constructor (name, salary, teamsize) {
+        super(name,salary);
+        this.teamsize = teamsize;
+    }
+}
+
+let manager = new Manager("Alpesh", 200000, 20);

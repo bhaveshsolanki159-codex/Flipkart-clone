@@ -659,3 +659,89 @@ class Dog extends Animal {
 
 const d = new Dog("Alpesh");
 d.speak();
+
+class Car {
+    constructor (model, year) {
+        this.model = model;
+        this.year = year;
+    }
+
+    displayInfo() {
+        console.log(`This car is a ${this.year} ${this.model} `)
+    }
+}
+
+let c = new Car ("BMW M4", 1999);
+c.displayInfo();
+
+class Rectangle {
+    constructor (width, height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    area(){
+        console.log(`Area: ${this.height*this.width}`);
+    }
+
+    parmenter() {
+        console.log(`Area: ${2*(this.height+this.width)}`);
+    }
+}
+
+let rec = new Rectangle(20, 40);
+rec.area();
+rec.parmenter();
+
+class Temp {
+  #c;
+
+  constructor(c) { this.#c = c; }
+
+  get c() { return this.#c; }
+  set c(v) { this.#c = v; }
+
+  get f() { return (this.#c * 1.8) + 32; }
+  set f(v) { this.#c = (v - 32) / 1.8; }
+}
+
+// Usage
+const t = new Temp(0);
+console.log(t.f); // 32 (Convert C to F)
+
+t.f = 212;
+console.log(t.c); // 100 (Reconvert F to C)  
+
+class User {
+  static count = 0;
+
+  constructor() {
+    User.count++;
+  }
+  static getCount() {
+    return User.count;
+  }
+}
+const user1 = new User();
+const user2 = new User();
+const user3 = new User();
+
+console.log(User.getCount());
+
+class Employee {
+    constructor (name,salary) {
+        this.name = name;
+        this.salary = salary;
+    }
+}
+
+class Manager extends Employee {
+    constructor (name, salary, teamsize) {
+        super(name,salary);
+        this.teamsize = teamsize;
+    }
+}
+
+let manager = new Manager("Alpesh", 200000, 20);
+
+
