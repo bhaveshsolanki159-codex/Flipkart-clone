@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">Hello, World!</h1>
+    
+    <p class="Para">paragraph</p>
+    <p class="Para">paragraph1</p>
+
+    <div class="container">
+        <div class="box">hello</div>
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+    </div>
+
+    <script>
+        let heading = document.querySelector("#heading");
+        console.log(heading);
+
+        let para = document.querySelectorAll(".Para");
+        console.log(para);
+
+        let parent = document.querySelector(".container");
+        let lastChild = parent.lastElementChild;
+        console.log(lastChild);
+
+        lastChild.innerHTML = "Hello";
+        console.log(lastChild.innerHTML);
+
+        let box = document.querySelectorAll(".box");
+        console.log(box);
+
+    </script>
+</body>
+</html>

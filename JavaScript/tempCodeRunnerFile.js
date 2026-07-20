@@ -1,15 +1,16 @@
-class Employee {
-    constructor (name,salary) {
-        this.name = name;
-        this.salary = salary;
-    }
+function Animal(name, sound) {
+  this.name = name;
+  this.sound = sound;
+  
+  this.intro = function() {
+    console.log(`My pet name is ${this.name}`);
+  };
 }
 
-class Manager extends Employee {
-    constructor (name, salary, teamsize) {
-        super(name,salary);
-        this.teamsize = teamsize;
-    }
-}
+Animal.prototype.speak = function() {
+  console.log(`${this.name}: ${this.sound}`);
+};
 
-let manager = new Manager("Alpesh", 200000, 20);
+let a1 = new Animal("bob", "barks");
+a1.intro();
+a1.speak();
