@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Scheme Switcher</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .canvas {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+        }
+
+        .button {
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+        }
+
+        #grey {
+            background-color: grey;
+        }
+
+        #white {
+            background-color: white;
+        }
+
+        #blue {
+            background-color: blue;
+        }
+
+        #yellow {
+            background-color: yellow;
+        }
+
+        h2 {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" aria-current="page">Home</a>
+        <a target="_blank" href="https://www.youtube.com/@chaiaurcode">
+            Youtube Channel
+        </a>
+    </nav>
+
+    <div class="canvas">
+        <h1>Color Schema Switcher</h1>
+        <span class="button" id="grey"></span>
+        <span class="button" id="white"></span>
+        <span class="button" id="blue"></span>
+        <span class="button" id="yellow"></span>
+
+        <h2>
+            Try clicking on the buttons to change the color scheme of the page.
+        </h2>
+    </div>
+</body>
+
+<script>
+    const button = document.querySelectorAll(".button");
+    const body = document.querySelector("body");
+
+    button.forEach(function(btn){
+        btn.addEventListener("click", function(e) {
+            const color = e.target.id;
+
+            switch(color) {
+                case "grey":
+                    body.style.backgroundColor = "grey";
+                    body.style.color = "white";
+                    break;
+                case "white":
+                    body.style.backgroundColor = "white";
+                    body.style.color = "black";
+                    break;
+                case "blue":
+                    body.style.backgroundColor = "blue";
+                    body.style.color = "white";
+                    break;
+                case "yellow":
+                    body.style.backgroundColor = "yellow";
+                    body.style.color = "black";
+                    break;
+                default:
+                    body.style.backgroundColor = "#f5f5f5";
+                    body.style.color = "#333";  
+            }
+        })
+    })
+</script>
+</html>
