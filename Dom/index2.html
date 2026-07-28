@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter</title>
+    <style>
+      /* Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Page Styling */
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      /* Container */
+      .container {
+        background: #fff;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        width: 350px;
+      }
+
+      /* Heading */
+      h1:first-child {
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      /* Counter Number */
+      #counter {
+        font-size: 60px;
+        color: #007bff;
+        margin-bottom: 25px;
+      }
+
+      /* Button Container */
+      .button {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      button {
+        padding: 10px 18px;
+        border: none;
+        border-radius: 8px;
+        background: #007bff;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Counter App</h1>
+      <h1 id="counter">0</h1>
+
+      <div class="button">
+        <button class="button" id="Start">Start</button>
+        <button class="button" id="Stop">Stop</button>
+        <button class="button" id="Remove">Resume</button>
+        <button class="button" id="Reset">Reset</button>
+      </div>
+    </div>
+  </body>
+  <script>
+    const start = document.querySelector("#Start");
+    const stop = document.querySelector("#Stop");
+    const remove = document.querySelector("#Remove");
+    const reset = document.querySelector("#Reset");
+
+    let h1 = document.querySelector("#counter");
+
+    let count = 0;
+    let count_start;
+    let flag = true;
+    start.addEventListener("click", () => {
+      if (!count_start) {
+        count_start = setInterval(() => {
+          count++;
+          h1.innerHTML = count;
+        }, 1000);
+      }
+    });
+
+    stop.addEventListener("click", () => {
+      clearInterval(count_start);
+      count_start = null;
+      flag = false;
+    });
+
+    remove.addEventListener("click", () => {
+      if (!count_start && !flag) {
+        count_start = setInterval(() => {
+          count++;
+          h1.innerHTML = count;
+        }, 1000);
+      }
+    });
+
+    reset.addEventListener("click", () => {
+      clearInterval(count_start);
+      count_start = null;
+      count = 0;
+      h1.innerHTML = 0;
+    });
+  </script>
+</html>
