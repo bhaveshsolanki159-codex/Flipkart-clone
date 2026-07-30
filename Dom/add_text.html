@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Manipulator</title>
+    <style>
+            * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+              font-family: Arial, Helvetica, sans-serif;
+            }
+
+            body {
+              background: #000;
+              color: black;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              min-height: 100vh;
+            }
+
+            .container {
+              width: 90%;
+              max-width: 500px;
+              background: white;
+              border: 1px solid #fff;
+              border-radius: 8px;
+              padding: 25px;
+              text-align: center;
+            }
+
+            .container h1 {
+              margin-bottom: 20px;
+              font-size: 2rem;
+            }
+
+            #text_input {
+              width: 100%;
+              padding: 10px;
+              background: white;
+              color: black;
+              border: 1px solid: black;
+              border-radius: 5px;
+              font-size: 1rem;
+              outline: none;
+            }
+
+            #text_input::placeholder {
+              color: #aaa;
+            }
+
+            p {
+              margin-top: 20px;
+            }
+
+            .text {
+              margin-top: 10px;
+              padding: 15px;
+              min-height: 60px;
+              border: 1px solid black;
+              border-radius: 5px;
+              text-align: left;
+              word-wrap: break-word;
+            }
+
+            .buttons{
+                margin-top: 20px;
+                display: flex;
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            button{
+                padding: 10px 15px;
+                background: black;
+                color: white;
+                border: 1px solid black;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            button:hover{
+                background: white;
+                color: black;
+            }
+
+            .highlight{
+                background: yellow;
+                color: black;
+            }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Interactive Text Manipulator</h1>
+      <input
+        type="text"
+        name="Text"
+        id="text_input"
+        placeholder="Type something..."
+      />
+
+      <p>Your text will appear here.</p>
+      <div class="text"></div>
+
+      <div class="buttons">
+        <button id="showBtn">Show Text</button>
+        <button id="clearBtn">Clear</button>
+        <button id="upperBtn">Uppercase</button>
+        <button id="highlightBtn">Toggle Highlight</button>
+      </div>
+    </div>
+  </body>
+
+  <script>
+        let input = document.querySelector("#text_input");
+        let output = document.querySelector(".text");
+
+        showBtn.addEventListener("click", () => {
+            output.innerHTML = input.value;
+        });
+
+        clearBtn.addEventListener("click", () => {
+            input.value = "";
+            output.innerHTML = "";
+        });
+        
+        upperBtn.addEventListener("click", () => {
+            output.innerHTML = input.value.toUpperCase();
+        });
+
+        highlightBtn.addEventListener("click", () => {
+            output.classList.toggle("highlight");
+        });
+
+
+  </script>
+</html>
