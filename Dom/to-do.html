@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+    
+        .container {
+            width: 400px;
+            padding: 20px;
+        }
+    
+        #taskInput {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    
+        button {
+            padding: 10px 15px;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+    
+        ul {
+            list-style-type: none;
+        }
+    
+        li {
+            background: white;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" placeholder="Add a new task" id="taskInput">
+        <button id="addTaskButton">Add Task</button>
+        <button id="duplicate">Duplicate Last</button>
+        <button id="insertTop">Insert at Top</button>
+        <button id="delete">Delete Selected</button>
+        <ul id="taskList"></ul>
+    </div>
+    <script>
+        const taskInput = document.getElementById('taskInput');
+        const addTaskButton = document.getElementById('addTaskButton');
+        const duplicateButton = document.getElementById('duplicate');
+        const insertTopButton = document.getElementById('insertTop');
+        const deleteButton = document.getElementById('delete');
+        const taskList = document.getElementById('taskList');
+
+        addTaskButton.addEventListener('click', () => {
+            const taskText = taskInput.value.trim();
+            if (taskText) {
+                const li = document.createElement('li');
+                li.textContent = taskText;
+                taskList.appendChild(li);
+                taskInput.value = '';
+            }
+        });
+
+        duplicateButton.addEventListener('click', () => {
+            const lastTask = taskList.lastElementChild;
+            if (lastTask) {
+                const li = document.createElement('li');
+                li.textContent = lastTask.textContent;
+                taskList.appendChild(li);
+            }
+        });
+
+        insertTopButton.addEventListener('click', () => {
+            const taskText = taskInput.value.trim();
+            if (taskText) {
+                const li = document.createElement('li');
+                li.textContent = taskText;
+                taskList.insertBefore(li, taskList.firstChild);
+                taskInput.value = '';
+            }
+        });
+
+        deleteButton.addEventListener("click", () => {
+            if (taskList.lastElementChild) {
+                taskList.removeChild(taskList.lastElementChild);
+            }
+        }); 
+    </script>
+</body>
+</html>
