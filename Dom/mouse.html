@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse function Event</title>
+    <style>
+        * {
+            margine: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            height: 200px;
+            width: 200px;
+            background-color: red;
+            align-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        box
+    </div>
+</body>
+<script>
+    let box = document.querySelector(".box");
+
+    box.addEventListener("mouseover", function() {
+        box.innerHTML = `coordinates: ${event.clientX} : ${event.clientY}`;
+    });
+
+    box.addEventListener("mouseleave", function() {
+        box.innerHTML = `coordinates: ${event.clientX} : ${event.clientY}`;
+    })
+
+    box.addEventListener("mousedown", () => {
+        box.innerHTML = `coordinates: ${event.clientX} : ${event.clientY}`;
+    })
+
+    box.addEventListener("dblclick", () => {
+        box.innerHTML = `coordinates: ${event.clientX} : ${event.clientY}`;
+    })
+
+    box.addEventListener("mouseup", () => {
+        box.innerHTML = `coordinates: ${event.clientX} : ${event.clientY}`;
+    })
+
+</script>
+</html>

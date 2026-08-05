@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Hover</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            gap: 20px;
+        }
+
+        .box {
+            border: 2px solid black;
+            border-radius: 5px;
+            height: 150px;
+            width: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .status, .coordinator {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mouse Event Demo</h1>
+        <div class="box">
+            Hover or Click
+        </div>
+        <div class="stats">
+            <div class="status"></div>
+            <div class="coordinator"></div>
+        </div>
+    </div>
+</body>
+<script>
+    let box = document.querySelector(".box");
+    let status = document.querySelector(".status");
+    let coordinator = document.querySelector(".coordinator");
+
+    box.addEventListener("mouseover", function(event) {
+        status.innerHTML = "Mouse is over the box";
+        coordinator.innerHTML = `Coordinates: ${event.clientX} : ${event.clientY}`;
+        box.style.backgroundColor = "#e3f2fd"; // Change background color on hover
+        box.style.borderColor = "lightblue"; // Change border color on hover
+    });
+
+    box.addEventListener("mouseleave", function(event) {
+        status.innerHTML = "Mouse has left the box";
+        coordinator.innerHTML = `Coordinates: ${event.clientX} : ${event.clientY}`;
+        box.style.backgroundColor = ""; // Reset background color
+        box.style.borderColor = ""; // Reset border color
+    });
+
+    box.addEventListener("mousedown", function(event) {
+        status.innerHTML = "Mouse button is pressed down";
+        coordinator.innerHTML = `Coordinates: ${event.clientX} : ${event.clientY}`;
+        box.style.backgroundColor = "#c8e6c9"; // Change background color on mouse down
+        box.style.borderColor = "#388e3c"; // Change border color on mouse down
+    });
+
+    box.addEventListener("dblclick", function(event) {
+        status.innerHTML = "Box was double-clicked";
+        coordinator.innerHTML = `Coordinates: ${event.clientX} : ${event.clientY}`;
+        box.style.backgroundColor = ""; // Reset background color
+        box.style.borderColor = ""; // Reset border color
+    });
+</script>
+</html>
