@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            weight: 100%;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 50%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="confirm_password"] {
+            width: 97%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <form action="submit_registration.php" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <div class="error" id="name_error"></div><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <div class="error" id="email_error"></div><br><br>
+
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <div class="error" id="password_error"></div><br><br>
+        
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password" required>
+        <div class="error" id="confirm_password_error"></div><br><br>
+
+        <input id="register_btn" type="submit" value="Register">
+    </form>
+
+    <script>
+        let name = document.getElementById('username');
+        let email = document.getElementById('email');
+        let password = document.getElementById('password');
+        let confirm_password = document.getElementById('confirm_password');
+        let register_btn = document.getElementById('register_btn');
+
+        let name_error = document.getElementById('name_error');
+        let email_error = document.getElementById('email_error');
+        let password_error = document.getElementById('password_error');
+        let confirm_password_error = document.getElementById('confirm_password_error');
+
+        register_btn.addEventListener('click', (event) => {
+
+            // email validation
+            let email_pattern = email.value;
+            if (!email_pattern.includes('@') || !email_pattern.includes('.')) {
+                email_error.textContent = 'Please enter a valid email address.';
+                event.preventDefault();
+            } else {
+                email_error.textContent = '';
+            }
+
+            // password validation
+            const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$/;
+            if (password.value.length < 6 || regex.test(password.value) === false) {
+                password_error.textContent = 'Password must be at least 8 characters long.';
+                event.preventDefault();
+            } else {
+                password_error.textContent = '';
+            }
+
+            // confirm password validation
+            if (confirm_password.value !== password.value) {
+                confirm_password_error.textContent = 'Passwords do not match.';
+                event.preventDefault();
+            } else {
+                confirm_password_error.textContent = '';
+            }
+
+            
+        })
+    </script>
+</body>
+</html>
